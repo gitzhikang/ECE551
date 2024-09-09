@@ -8,7 +8,7 @@ struct _retire_info {
 };
 typedef struct _retire_info retire_info;
 
-int computeBalance(int startAge, double initial, retire_info info) {
+double computeBalance(int startAge, double initial, retire_info info) {
   int months = info.months;
   double rateOfReturn = info.rate_of_return / 12.0;
   double contribution = info.contribution;
