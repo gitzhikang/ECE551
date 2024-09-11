@@ -1,0 +1,52 @@
+aaabb bbbaa
+aaaaa
+aaaaa aaaaa aaaaa
+a aaaaa
+aaaaa abcd
+aaaaa bbbbb
+11111 aaaaa
+!!!!! aaaaa
+$$$$$ aaaaa
+$$$aa bbbaa
+$$$aa bbbba
+
+aaaaaa aaaaa
+aaaaa aaaaaa
+!!$$$ abcde
+^asbc aaaaa
+aaaaaa bbbbb
+aabbaa aaabb
+aaaa abcdef
+abcd aabcd
+aaaaa bbbbbb
+abcde bbb
+aabbc bbssd
+aaaab aaaac
+aaaac aaaab
+abdec !@#$%
+abc efj
+ebb jnf
+jnf ebb
+ kkkkk
+ kk  k 33333
+kk kk aaaaa
+aa aa kkkkk
+abcde abcde
+abcdd abcde
+abcde abcdd
+aabcd abcde
+abcde aabcd
+
+abcde bcdef
+aaaaa dddde
+dddde cccee
+cccee eeww1
+eeww1 eijns
+eeww1 ee324
+eee33 eee31
+eee31 ee221
+aaabc bbbbz
+aabbc ddeef
+ababa aabbc
+AAABB abcde
+AAaBB aaabb
