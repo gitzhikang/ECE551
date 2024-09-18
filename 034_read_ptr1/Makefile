@@ -1,0 +1,12 @@
+# Makefile
+
+CC = gcc
+CFLAGS = -Wall -g
+
+all: test
+
+test: test.c
+	$(CC) $(CFLAGS) -o test test.c
+
+clean:
+	rm -f test
