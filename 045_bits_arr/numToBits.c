@@ -28,7 +28,7 @@ void doTest(uint32_t * nums, int n) {
   for (int i = 0; i < n; i++) {
     printf(" %9d (%8X) => ", nums[i], nums[i]);
     for (int j = 0; j < 32; j++) {
-      printf("%d", bits[i * 32 + j]);
+      printf("%d", bits[(i + 1) * 32 - j - 1]);
     }
     printf("\n");
   }
