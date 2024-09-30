@@ -1,0 +1,18 @@
+Grading at 09/30/2024:18:03:24.155309
+For commit ID 5478ac6ec79dfa093029f81fa7650a95859a6d4e
+Grading at Mon Sep 30 02:03:19 PM EDT 2024
+Attempting to compile breaker.c 
+gcc -Wall -g   -c -o breaker.o breaker.c
+gcc -Wall -g -o breaker breaker.o
+testcase1 passed
+#################################################
+testcase2:
+testcase2 passed
+#################################################
+testcase3:
+testcase3 passed
+#################################################
+testcase4:
+testcase4 passed
+
+Overall Grade: A
