@@ -55,7 +55,10 @@ int main(int argc, char ** argv) {
     }
     originMatrix[row][col++] = c;
   }
-
+  if (row < 10) {
+    fprintf(stderr, "One row doesn't reach 10 length!\n");
+    exit(EXIT_FAILURE);
+  }
   roteMatrix(originMatrix, 10);
   for (int i = 0; i < 10; i++) {
     for (int j = 0; j < 10; j++) {
