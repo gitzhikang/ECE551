@@ -1,6 +1,6 @@
-Grading at 10/02/2024:20:50:23.798900
-For commit ID 8820ba6393fc554ab1d610fc11505efcc8f2c7d8
-Grading at Wed Oct  2 04:50:19 PM EDT 2024
+Grading at 10/02/2024:21:06:57.872911
+For commit ID eaa38dd78109ec5c8cb0491897c4396162ba8e74
+Grading at Wed Oct  2 05:06:53 PM EDT 2024
 Attempting to compile rotateMatrix.c
 testcase1 passed
 #################################################
@@ -8,42 +8,7 @@ testcase2:
 testcase2 passed
 #################################################
 testcase3:
-valgrind reported memory errors
-==329277== Memcheck, a memory error detector
-==329277== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==329277== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==329277== Command: ./rotateMatrix testFile2.txt
-==329277== Parent PID: 329276
-==329277== 
-==329277== Syscall param write(buf) points to uninitialised byte(s)
-==329277==    at 0x4977887: write (write.c:26)
-==329277==    by 0x48EDEEC: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1180)
-==329277==    by 0x48EF9E0: new_do_write (fileops.c:448)
-==329277==    by 0x48EF9E0: _IO_new_do_write (fileops.c:425)
-==329277==    by 0x48EF9E0: _IO_do_write@@GLIBC_2.2.5 (fileops.c:422)
-==329277==    by 0x48F19C1: _IO_flush_all_lockp (genops.c:706)
-==329277==    by 0x48F1B7D: _IO_cleanup (genops.c:866)
-==329277==    by 0x48A8541: __run_exit_handlers (exit.c:134)
-==329277==    by 0x48A860F: exit (exit.c:143)
-==329277==    by 0x488CD96: (below main) (libc_start_call_main.h:74)
-==329277==  Address 0x4a902a0 is 0 bytes inside a block of size 4,096 alloc'd
-==329277==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==329277==    by 0x48E1BA3: _IO_file_doallocate (filedoalloc.c:101)
-==329277==    by 0x48F0CDF: _IO_doallocbuf (genops.c:347)
-==329277==    by 0x48EFF5F: _IO_file_overflow@@GLIBC_2.2.5 (fileops.c:744)
-==329277==    by 0x48E59F6: putchar (putchar.c:28)
-==329277==    by 0x10961C: main (rotateMatrix.c:62)
-==329277== 
-==329277== 
-==329277== HEAP SUMMARY:
-==329277==     in use at exit: 0 bytes in 0 blocks
-==329277==   total heap usage: 3 allocs, 3 frees, 8,664 bytes allocated
-==329277== 
-==329277== For a detailed leak analysis, rerun with: --leak-check=full
-==329277== 
-==329277== Use --track-origins=yes to see where uninitialised values come from
-==329277== For lists of detected and suppressed errors, rerun with: -s
-==329277== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+testcase3 passed
 #################################################
 testcase4:
 testcase4 passed
@@ -55,4 +20,4 @@ testcase6:
 Your file matched the expected output
 testcase6 passed
 
-Overall Grade: B
+Overall Grade: A
