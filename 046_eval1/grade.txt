@@ -1,6 +1,6 @@
-Grading at 10/06/2024:21:11:55.495582
-For commit ID 0fded052950bb27d762cf34a79a6af10b7400c06
-Grading at Sun Oct  6 05:11:48 PM EDT 2024
+Grading at 10/06/2024:21:18:23.741635
+For commit ID 7bf00786cd4d0d6fd44ed98d954ac39791fb27f3
+Grading at Sun Oct  6 05:18:15 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -36,11 +36,7 @@ We agreed on this testcase and valgrind was clean
 -------------------------
 Running our code...
 Running your code
-You said this was an error (exit status was 1), but we said it was valid
-Note: this may happen if your code timed out too...
-Here is what you printed to stderr:
-------
-Wrong position!------
+We agreed on this testcase and valgrind was clean
 -------------------------
  This test case will run 
  launches-step1 
@@ -103,6 +99,28 @@ And valgrind reported no errors
  launches-step1 
  With arguments 
  wiredinput8.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput9.txt 
+-------------------------
+Running our code...
+Running your code
+You said this was an error (exit status was 1), but we said it was valid
+Note: this may happen if your code timed out too...
+Here is what you printed to stderr:
+------
+Wrong position!------
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput10.txt 
 -------------------------
 Running our code...
 Running your code
