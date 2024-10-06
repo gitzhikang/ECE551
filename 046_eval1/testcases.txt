@@ -8,3 +8,5 @@ launches-step1 wiredinput6.txt
 launches-step1 wiredinput-none.txt
 launches-step1 wiredinput7.txt
 launches-step1 wiredinput8.txt
+launches-step1 wiredinput9.txt
+launches-step1 wiredinput10.txt
