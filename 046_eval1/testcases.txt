@@ -12,4 +12,17 @@ launches-step1 wiredinput9.txt
 launches-step1 wiredinput10.txt
 launches-step1 wiredinput11.txt
 launches-step1 wiredinput12.txt
+launches-step1 wiredinput13.txt
 launches-step4 wiredinput1.txt launches_simple.txt
+launches-step4 wiredinput2.txt launches_simple.txt
+launches-step4 wiredinput3.txt launches_simple.txt
+launches-step4 wiredinput4.txt launches_simple.txt
+launches-step4 wiredinput5.txt launches_simple.txt
+launches-step4 wiredinput6.txt launches_simple.txt
+launches-step4 wiredinput7.txt launches_simple.txt
+launches-step4 wiredinput8.txt launches_simple.txt
+launches-step4 wiredinput9.txt launches_simple.txt
+launches-step4 wiredinput10.txt launches_simple.txt
+launches-step4 wiredinput11.txt launches_simple.txt
+launches-step4 wiredinput12.txt launches_simple.txt
+launches-step4 wiredinput13.txt launches_simple.txt

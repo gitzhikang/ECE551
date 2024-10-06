@@ -8,6 +8,10 @@
 
 point_t get_location_at(const planet_t * p, double time) {
   // Step 2: WRITE THIS
+  if (p == NULL) {
+    fprintf(stderr, "Planet is NULL!\n");
+    exit(EXIT_FAILURE);
+  }
   point_t ans;
   double period = p->year_len;
   double movedRadius = time * 2 * M_PI / period;
@@ -30,6 +34,6 @@ planet_t * find_planet(const planet_list_t * lst, const char * name) {
       return list[i];
     }
   }
-  printf("Planet %s not found!\n", name);
+  fprintf(stderr, "Planet %s not found!\n", name);
   exit(EXIT_FAILURE);
 }
