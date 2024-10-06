@@ -9,65 +9,99 @@
 void parse_planet_info(planet_t * planet, char * line) {
   //STEP 1: Write this
   int index = 0;
+  const char * seperator = ":";
+  char * current = line;
+  char * token;
   //convert name
-  while (isalpha(line[index])) {
+  token = strsep(&current, seperator);
+  if (token == NULL) {
+    fprintf(stderr, "Wrong number of fields!");
+    exit(EXIT_FAILURE);
+  }
+  while (token[index] != '\n' && token[index] != '\0' && index < 32) {
     planet->name[index] = line[index];
     index++;
   }
-  if (isdigit(line[index])) {
-    fprintf(stderr, "Wrong format!");
+  if (index == 32) {
+    fprintf(stderr, "name excced the maxium length!");
     exit(EXIT_FAILURE);
   }
-  if (line[index] != ':') {
+  if (index == 0) {
+    fprintf(stderr, "null input for name!");
+    exit(EXIT_FAILURE);
+  }
+  if (token[index] == '\n') {
     fprintf(stderr, "Wrong number of fields!");
     exit(EXIT_FAILURE);
   }
-  planet->name[index++] = '\0';
+  planet->name[index] = '\0';
   //convert radius
+  token = strsep(&current, seperator);
+  index = 0;
   double radius = 0;
-  while (isdigit(line[index])) {
-    radius = 10 * radius + line[index] - '0';
+  while (token[index] != '\n' && token[index] != '\0') {
+    //100.02
+    if (!isdigit(token[index]) && token[index] != '.') {
+      fprintf(stderr, "Wrong format for radius!");
+      exit(EXIT_FAILURE);
+    }
     index++;
   }
-  if (isalpha(line[index])) {
-    fprintf(stderr, "Wrong format!");
+  if (index == 0) {
+    fprintf(stderr, "null input for radius!");
     exit(EXIT_FAILURE);
   }
-  if (line[index] != ':') {
+  if (token[index] == '\n') {
     fprintf(stderr, "Wrong number of fields!");
     exit(EXIT_FAILURE);
   }
+
+  radius = atof(token);
   planet->orbital_radius = radius;
-  index++;
   //convert period
+  index = 0;
+  token = strsep(&current, seperator);
   double period = 0;
-  while (isdigit(line[index])) {
-    period = 10 * period + line[index] - '0';
+  while (token[index] != '\n' && token[index] != '\0') {
+    if (!isdigit(token[index]) && token[index] != '.') {
+      fprintf(stderr, "Wrong format for period!");
+      exit(EXIT_FAILURE);
+    }
     index++;
   }
-  if (isalpha(line[index])) {
-    fprintf(stderr, "Wrong format!");
+  if (index == 0) {
+    fprintf(stderr, "null input for period!");
     exit(EXIT_FAILURE);
   }
-  if (line[index] != ':') {
+  if (token[index] == '\n') {
     fprintf(stderr, "Wrong number of fields!");
     exit(EXIT_FAILURE);
   }
+  period = atof(token);
   planet->year_len = period;
-  index++;
   //convert position
+  index = 0;
+  token = strsep(&current, seperator);
   double position = 0;
-  while (isdigit(line[index])) {
-    position = 10 * position + line[index] - '0';
+  while (token[index] != '\n' && token[index] != '\0') {
+    if (!isdigit(token[index]) && token[index] != '.') {
+      fprintf(stderr, "Wrong format for period!");
+      exit(EXIT_FAILURE);
+    }
     index++;
   }
-  //305a || 305%
-  if (line[index] != '\n') {
-    fprintf(stderr, "Wrong format!");
+  if (index == 0) {
+    fprintf(stderr, "null input for position!");
     exit(EXIT_FAILURE);
   }
+  if (token[index] != '\n') {
+    fprintf(stderr, "Wrong number of fields!");
+    exit(EXIT_FAILURE);
+  }
+  position = atof(token);
   //370
-  if (position > 360) {
+  //position >= 360
+  if (position > 360 || fabs(position - 360.0) < 1e-9) {
     fprintf(stderr, "Wrong position!");
     exit(EXIT_FAILURE);
   }

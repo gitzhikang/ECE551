@@ -1,0 +1,10 @@
+launches-step1 wiredinput.txt
+launches-step1 wiredinput1.txt
+launches-step1 wiredinput2.txt
+launches-step1 wiredinput3.txt
+launches-step1 wiredinput4.txt
+launches-step1 wiredinput5.txt
+launches-step1 wiredinput6.txt
+launches-step1 wiredinput-none.txt
+launches-step1 wiredinput7.txt
+launches-step1 wiredinput8.txt
