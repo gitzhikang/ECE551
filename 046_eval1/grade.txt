@@ -1,6 +1,6 @@
-Grading at 10/06/2024:21:22:11.991646
-For commit ID 77ee2c50c0f02a67b43b04e548b5b591bd0684fc
-Grading at Sun Oct  6 05:22:03 PM EDT 2024
+Grading at 10/06/2024:21:27:11.727985
+For commit ID 4bb573c79422ceaa747121246421d92ca1661d8e
+Grading at Sun Oct  6 05:27:02 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -111,16 +111,42 @@ We agreed on this testcase and valgrind was clean
 -------------------------
 Running our code...
 Running your code
-You said this was an error (exit status was 1), but we said it was valid
-Note: this may happen if your code timed out too...
-Here is what you printed to stderr:
-------
-Wrong position!------
+We both agreed this was not an error, but your output is different from ours
+Your output on the left, ours on the right
+Planet A     has radius          100.00, year length      360.00 initial angle 0.0000		Planet A     has radius          100.00, year length      360.00 initial angle 0.0000
+Planet B     has radius          200.00, year length      720.00 initial angle 0.0000		Planet B     has radius          200.00, year length      720.00 initial angle 0.0000
+Planet C     has radius          100.00, year length      360.00 initial angle 3.1416		Planet C     has radius          100.00, year length      360.00 initial angle 3.1416
+Planet D     has radius          200.00, year length      720.00 initial angle 6.2832	      |	Planet D     has radius          200.00, year length      720.00 initial angle 12.5664
+Your file did not match the expected output
 -------------------------
  This test case will run 
  launches-step1 
  With arguments 
  wiredinput10.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput11.txt 
+-------------------------
+Running our code...
+Running your code
+We both agreed this was not an error, but your output is different from ours
+Your output on the left, ours on the right
+Planet A     has radius          100.00, year length      360.00 initial angle 0.0000		Planet A     has radius          100.00, year length      360.00 initial angle 0.0000
+Planet B     has radius          200.00, year length      720.00 initial angle 0.0000		Planet B     has radius          200.00, year length      720.00 initial angle 0.0000
+Planet C     has radius          100.00, year length      360.00 initial angle 3.1416		Planet C     has radius          100.00, year length      360.00 initial angle 3.1416
+Planet D     has radius          200.00, year length      720.00 initial angle 0.0000	      |	Planet D     has radius          200.00, year length      720.00 initial angle 6.2832
+Your file did not match the expected output
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput12.txt 
 -------------------------
 Running our code...
 Running your code
