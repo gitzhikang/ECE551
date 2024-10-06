@@ -1,6 +1,6 @@
-Grading at 10/06/2024:21:42:57.196113
-For commit ID 9ea3670ab98fc170f603eb32f04465ba8aa1ad03
-Grading at Sun Oct  6 05:42:46 PM EDT 2024
+Grading at 10/06/2024:21:54:46.852293
+For commit ID 56b2683d5d6f1b83de38abf76b5854e1c0aeeec0
+Grading at Sun Oct  6 05:54:27 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -141,6 +141,16 @@ Running your code
 We agreed on this testcase and valgrind was clean
 -------------------------
  This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput13.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
  launches-step4 
  With arguments 
  wiredinput1.txt launches_simple.txt 
@@ -157,8 +167,121 @@ gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 iter_target.c
 gcc -o launches-step4 -Wall -Werror --std=gnu99 -pedantic -ggdb3 step4.o myinput.o provided.o planet_util.o target.o iter_target.o -lm
 Running our code...
 Running your code
-We agreed this was an error, but you did not print anything to stderr
-You have FAILED one or more of your test cases
-Keep debugging
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput2.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput3.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput4.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput5.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput6.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput7.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput8.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput9.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput10.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput11.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput12.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput13.txt launches_simple.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+You have PASSED all of your test cases
+Keep adding test cases until you are satisfied your program is correct
 
 Overall Grade: NO GRADE YET
