@@ -12,3 +12,4 @@ launches-step1 wiredinput9.txt
 launches-step1 wiredinput10.txt
 launches-step1 wiredinput11.txt
 launches-step1 wiredinput12.txt
+launches-step4 wiredinput1.txt launches_simple.txt

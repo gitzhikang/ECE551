@@ -99,10 +99,5 @@ void parse_planet_info(planet_t * planet, char * line) {
     exit(EXIT_FAILURE);
   }
   position = atof(token);
-  //370
-  //position >= 360
-  while (position > 360.0) {
-    position -= 360.0;
-  }
   planet->init_pos = position / 180 * M_PI;
 }
