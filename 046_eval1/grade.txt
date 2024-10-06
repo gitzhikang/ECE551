@@ -1,6 +1,6 @@
-Grading at 10/06/2024:21:27:11.727985
-For commit ID 4bb573c79422ceaa747121246421d92ca1661d8e
-Grading at Sun Oct  6 05:27:02 PM EDT 2024
+Grading at 10/06/2024:21:42:57.196113
+For commit ID 9ea3670ab98fc170f603eb32f04465ba8aa1ad03
+Grading at Sun Oct  6 05:42:46 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -111,13 +111,7 @@ We agreed on this testcase and valgrind was clean
 -------------------------
 Running our code...
 Running your code
-We both agreed this was not an error, but your output is different from ours
-Your output on the left, ours on the right
-Planet A     has radius          100.00, year length      360.00 initial angle 0.0000		Planet A     has radius          100.00, year length      360.00 initial angle 0.0000
-Planet B     has radius          200.00, year length      720.00 initial angle 0.0000		Planet B     has radius          200.00, year length      720.00 initial angle 0.0000
-Planet C     has radius          100.00, year length      360.00 initial angle 3.1416		Planet C     has radius          100.00, year length      360.00 initial angle 3.1416
-Planet D     has radius          200.00, year length      720.00 initial angle 6.2832	      |	Planet D     has radius          200.00, year length      720.00 initial angle 12.5664
-Your file did not match the expected output
+We agreed on this testcase and valgrind was clean
 -------------------------
  This test case will run 
  launches-step1 
@@ -135,13 +129,7 @@ We agreed on this testcase and valgrind was clean
 -------------------------
 Running our code...
 Running your code
-We both agreed this was not an error, but your output is different from ours
-Your output on the left, ours on the right
-Planet A     has radius          100.00, year length      360.00 initial angle 0.0000		Planet A     has radius          100.00, year length      360.00 initial angle 0.0000
-Planet B     has radius          200.00, year length      720.00 initial angle 0.0000		Planet B     has radius          200.00, year length      720.00 initial angle 0.0000
-Planet C     has radius          100.00, year length      360.00 initial angle 3.1416		Planet C     has radius          100.00, year length      360.00 initial angle 3.1416
-Planet D     has radius          200.00, year length      720.00 initial angle 0.0000	      |	Planet D     has radius          200.00, year length      720.00 initial angle 6.2832
-Your file did not match the expected output
+We agreed on this testcase and valgrind was clean
 -------------------------
  This test case will run 
  launches-step1 
@@ -151,6 +139,25 @@ Your file did not match the expected output
 Running our code...
 Running your code
 We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step4 
+ With arguments 
+ wiredinput1.txt launches_simple.txt 
+-------------------------
+I need to compile your code for launches-step4 (make launches-step4)
+
+Compiling launches-step4
+rm -f myinput.o step1.o *~ launches-step? launches-step4-debug
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 step4.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 myinput.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 planet_util.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 target.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 iter_target.c
+gcc -o launches-step4 -Wall -Werror --std=gnu99 -pedantic -ggdb3 step4.o myinput.o provided.o planet_util.o target.o iter_target.o -lm
+Running our code...
+Running your code
+We agreed this was an error, but you did not print anything to stderr
 You have FAILED one or more of your test cases
 Keep debugging
 
