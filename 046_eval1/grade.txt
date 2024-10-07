@@ -1,6 +1,6 @@
-Grading at 10/06/2024:21:54:46.852293
-For commit ID 56b2683d5d6f1b83de38abf76b5854e1c0aeeec0
-Grading at Sun Oct  6 05:54:27 PM EDT 2024
+Grading at 10/07/2024:17:13:43.237374
+For commit ID bfd18ca3621c977a2c2e7e76a696ce634157d1a0
+Grading at Mon Oct  7 01:13:23 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -151,6 +151,19 @@ We agreed this was an error, and you printed something to stderr
 And valgrind reported no errors
 -------------------------
  This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput14.txt 
+-------------------------
+Running our code...
+Running your code
+You said this was an error (exit status was 1), but we said it was valid
+Note: this may happen if your code timed out too...
+Here is what you printed to stderr:
+------
+null input for name!------
+-------------------------
+ This test case will run 
  launches-step4 
  With arguments 
  wiredinput1.txt launches_simple.txt 
@@ -281,7 +294,7 @@ Running our code...
 Running your code
 We agreed this was an error, and you printed something to stderr
 And valgrind reported no errors
-You have PASSED all of your test cases
-Keep adding test cases until you are satisfied your program is correct
+You have FAILED one or more of your test cases
+Keep debugging
 
 Overall Grade: NO GRADE YET
