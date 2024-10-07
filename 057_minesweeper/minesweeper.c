@@ -50,9 +50,12 @@ board_t * makeBoard(int w, int h, int numMines) {
     }
     ans->board[r] = line;
   }
-  ans->height = h;
   ans->width = w;
+  ans->height = h;
   ans->totalMines = numMines;
+  for (int i = 0; i < numMines; i++) {
+    addRandomMine(ans);
+  }
   return ans;
 }
 
