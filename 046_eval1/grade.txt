@@ -1,6 +1,6 @@
-Grading at 10/07/2024:18:30:32.874653
-For commit ID c1386b42936e729862c78c7e6937c5c02093b3e6
-Grading at Mon Oct  7 02:30:09 PM EDT 2024
+Grading at 10/07/2024:18:47:16.903130
+For commit ID a07b2a83991a07ccdb7cfb3ef2708f46fdd84bc8
+Grading at Mon Oct  7 02:46:50 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -167,6 +167,35 @@ We agreed on this testcase and valgrind was clean
 Running our code...
 Running your code
 We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput16.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput17.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step1 
+ With arguments 
+ wiredinput18.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed this was an error, and you printed something to stderr
+And valgrind reported no errors
 -------------------------
  This test case will run 
  launches-step4 
