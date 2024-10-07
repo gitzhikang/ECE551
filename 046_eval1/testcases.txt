@@ -27,3 +27,7 @@ launches-step4 wiredinput10.txt launches_simple.txt
 launches-step4 wiredinput11.txt launches_simple.txt
 launches-step4 wiredinput12.txt launches_simple.txt
 launches-step4 wiredinput13.txt launches_simple.txt
+launches-step3 simple.txt launch_simple1.txt
+launches-step3 simple.txt launch_simple2.txt
+launches-step3 simple.txt launch_simple3.txt
+launches-step3 simple.txt launch_simple4.txt

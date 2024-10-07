@@ -4,6 +4,7 @@
 launch_result_t compute_launch_by_info(const launch_input_t * this_launch,
                                        const planet_list_t * planets) {
   //STEP 3: Write this
+
   launch_result_t result;
   planet_t * source_planet = find_planet(planets, this_launch->src);
   planet_t * target_planet = find_planet(planets, this_launch->dest);
