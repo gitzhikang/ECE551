@@ -27,8 +27,7 @@ void parse_planet_info(planet_t * planet, char * line) {
     exit(EXIT_FAILURE);
   }
   if (index == 0) {
-    fprintf(stderr, "null input for name!");
-    exit(EXIT_FAILURE);
+    planet->name[index] = '\0';
   }
   if (token[index] == '\n') {
     fprintf(stderr, "Wrong number of fields!");
@@ -90,14 +89,15 @@ void parse_planet_info(planet_t * planet, char * line) {
     }
     index++;
   }
-  if (index == 0) {
-    fprintf(stderr, "null input for position!");
-    exit(EXIT_FAILURE);
-  }
   if (token[index] != '\n') {
     fprintf(stderr, "Wrong number of fields!");
     exit(EXIT_FAILURE);
   }
-  position = atof(token);
+  if (index == 0) {
+    position = 0.0;
+  }
+  else {
+    position = atof(token);
+  }
   planet->init_pos = position / 180 * M_PI;
 }
