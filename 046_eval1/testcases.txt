@@ -15,6 +15,9 @@ launches-step1 wiredinput12.txt
 launches-step1 wiredinput13.txt
 launches-step1 wiredinput14.txt
 launches-step1 wiredinput15.txt
+launches-step1 wiredinput16.txt
+launches-step1 wiredinput17.txt
+launches-step1 wiredinput18.txt
 launches-step4 wiredinput1.txt launches_simple.txt
 launches-step4 wiredinput2.txt launches_simple.txt
 launches-step4 wiredinput3.txt launches_simple.txt
