@@ -1,6 +1,6 @@
-Grading at 10/07/2024:17:13:43.237374
-For commit ID bfd18ca3621c977a2c2e7e76a696ce634157d1a0
-Grading at Mon Oct  7 01:13:23 PM EDT 2024
+Grading at 10/07/2024:17:29:16.825886
+For commit ID d80058d002b5631c510260c80e44c33f55ff0b44
+Grading at Mon Oct  7 01:28:53 PM EDT 2024
 Running your test cases
 -------------------------
  This test case will run 
@@ -294,6 +294,51 @@ Running our code...
 Running your code
 We agreed this was an error, and you printed something to stderr
 And valgrind reported no errors
+-------------------------
+ This test case will run 
+ launches-step3 
+ With arguments 
+ simple.txt launch_simple1.txt 
+-------------------------
+I need to compile your code for launches-step3 (make launches-step3)
+
+Compiling launches-step3
+rm -f iter_target.o myinput.o planet_util.o step4.o target.o *~ launches-step? launches-step4-debug
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 step3.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 myinput.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 planet_util.c
+gcc -c -Wall -Werror --std=gnu99 -pedantic -ggdb3 target.c
+gcc -o launches-step3 -Wall -Werror --std=gnu99 -pedantic -ggdb3 step3.o myinput.o provided.o planet_util.o target.o -lm
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step3 
+ With arguments 
+ simple.txt launch_simple2.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step3 
+ With arguments 
+ simple.txt launch_simple3.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
+-------------------------
+ This test case will run 
+ launches-step3 
+ With arguments 
+ simple.txt launch_simple4.txt 
+-------------------------
+Running our code...
+Running your code
+We agreed on this testcase and valgrind was clean
 You have FAILED one or more of your test cases
 Keep debugging
 
