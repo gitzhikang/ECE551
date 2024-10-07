@@ -1,0 +1,24 @@
+Grading at 10/07/2024:22:37:26.493505
+For commit ID 7027dd4277af805191713786b72fc1a4bebe231f
+Grading at Mon Oct  7 06:37:19 PM EDT 2024
+Attempting to compile encrypt.c
+testcase1:
+your output was correct
+valgrind was clean
+#################################################
+testcase2:
+valgrind was clean
+#################################################
+testcase3:
+valgrind was clean
+#################################################
+testcase4:
+valgrind was clean
+#################################################
+testcase5:
+valgrind was clean
+#################################################
+testcase6:
+valgrind was clean
+
+Overall Grade: A
