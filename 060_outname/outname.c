@@ -7,7 +7,7 @@
 char * computeOutputFileName(const char * inputName) {
   //WRITE ME
   size_t len = strlen(inputName);
-  char * outName = malloc(sizeof(*outName) * (len + 7));
+  char * outName = malloc(sizeof(*outName) * (len + 1 + 7));
   strcpy(outName, inputName);
   strcat(outName, ".counts");
   return outName;
