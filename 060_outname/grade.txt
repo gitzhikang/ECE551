@@ -1,15 +1,18 @@
-Grading at 10/09/2024:18:08:25.230612
-For commit ID 8206ece9021cd82abbd54035559e8effb996c745
-Grading at Wed Oct  9 02:08:23 PM EDT 2024
+Grading at 10/09/2024:18:13:39.106951
+For commit ID a631bc04decbb1954f3def5999e768ed0b57cc77
+Grading at Wed Oct  9 02:13:35 PM EDT 2024
 Attempting to compile:
 #################################################
 testcase1:
-valgrind reported memory errors
+Your output is correct
+valgrind was clean
 #################################################
 testcase2:
-valgrind reported memory errors
+Your output is correct
+valgrind was clean
 #################################################
 testcase3:
-valgrind reported memory errors
+Your output is correct
+valgrind was clean
 
-Overall Grade: F
+Overall Grade: A
