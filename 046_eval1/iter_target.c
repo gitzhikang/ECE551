@@ -7,6 +7,7 @@
 double cal_distance(point_t a, point_t b) {
   return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
+//compute launch result accoring to the target position
 launch_result_t compute_launch_by_target_position(const launch_input_t * this_launch,
                                                   const planet_list_t * planets,
                                                   point_t target_position) {
@@ -20,6 +21,7 @@ launch_result_t compute_launch_by_target_position(const launch_input_t * this_la
       (location_source.x - location_target.x) * (location_source.x - location_target.x) +
       (location_source.y - location_target.y) * (location_source.y - location_target.y));
   double ans_time = distance / this_launch->speed;
+  //calculate angle
   double ans_angle = atan((location_target.y - location_source.y) /
                           (location_target.x - location_source.x));
   //post calculation
@@ -54,14 +56,16 @@ launch_result_t solve_launch(const launch_input_t * this_launch,
   double least_all_time = DBL_MAX;
   //get location of target plane
   point_t target_projected_point = get_location_at(target_planet, this_launch->time);
-  //get time to target plane
+  //get result to target plane
   launch_result_t ans_to_projected_target =
       compute_launch_by_target_position(this_launch, planets, target_projected_point);
+  //get whole time(including wait time) of getting to target planet
   double whole_time =
       when_does_planet_return_to(target_planet,
                                  target_projected_point,
                                  this_launch->time + ans_to_projected_target.duration) -
       this_launch->time;
+  //record least time of getting to target planet
   if (whole_time < least_all_time) {
     least_all_time = whole_time;
     least_ans = ans_to_projected_target;
@@ -71,6 +75,7 @@ launch_result_t solve_launch(const launch_input_t * this_launch,
       target_planet, this_launch->time + ans_to_projected_target.duration);
   ;
   double distance = cal_distance(target_projected_point, next_target_projected_point);
+  //begin to iterate the same behavior like previous
   uint64_t iterations = 1;
   while (iterations < max_iterations && distance > close_enough) {
     target_projected_point = next_target_projected_point;
@@ -90,6 +95,7 @@ launch_result_t solve_launch(const launch_input_t * this_launch,
     iterations++;
     distance = cal_distance(target_projected_point, next_target_projected_point);
   }
+  //if reach to max_iteration, return least ans
   if (iterations >= max_iterations) {
     return least_ans;
   }
