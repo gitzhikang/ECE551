@@ -31,6 +31,10 @@ kvarray_t * readKVs(const char * fname) {
     char * token = strsep(&lines[j], seperator);
     ans->list[j].key = token;
     size_t len = strlen(lines[j]);
+    if (len == 0) {
+      fprintf(stderr, "Wrong format");
+      exit(EXIT_FAILURE);
+    }
     if (len > 0 && lines[j][len - 1] == '\n') {
       lines[j][len - 1] = '\0';
     }
