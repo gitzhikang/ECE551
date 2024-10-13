@@ -12,6 +12,10 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
   counts_t * ans = createCounts();
   size_t lineLen = 0;
   FILE * f = fopen(filename, "r");
+  if (f == NULL) {
+    fprintf(stderr, "can't open key file");
+    exit(EXIT_FAILURE);
+  }
   while (getline(&curr, &lineLen, f) >= 0) {
     int index = 0;
     while (curr[index] != '\n') {
@@ -20,7 +24,6 @@ counts_t * countFile(const char * filename, kvarray_t * kvPairs) {
     curr[index] = '\0';
     char * getVal = lookupValue(kvPairs, curr);
     addCount(ans, getVal);
-    curr = NULL;
   }
   free(curr);
   fclose(f);
@@ -43,7 +46,6 @@ int main(int argc, char ** argv) {
     counts_t * c = countFile(argv[i], kv);
     //compute the output file name from argv[i] (call this outName)
     char * outName = computeOutputFileName(argv[i]);
-
     //open the file named by outName (call that f)
     FILE * f = fopen(outName, "w");
     if (f == NULL) {
