@@ -1,0 +1,13 @@
+Grading at 10/21/2024:18:21:11.510652
+For commit ID ca9bd121848f71ad6813e655fe8df3a56b928b2f
+Grading at Mon Oct 21 02:21:10 PM EDT 2024
+Attempting to compile:
+rm -f main.o point.o circle.o circles
+g++ -std=c++11 -Wall -g -c main.cpp -o main.o
+g++ -std=c++11 -Wall -g -c point.cpp -o point.o
+g++ -std=c++11 -Wall -g -c circle.cpp -o circle.o
+g++ -std=c++11 -Wall -g -o circles main.o point.o circle.o
+Found binary 'circles'
+Your output matched what we expected
+
+Overall Grade: PASSED
