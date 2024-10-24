@@ -1,6 +1,7 @@
 #include "rand_story.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 int main(int argc,char** argv){
     if(argc!=2){
         fprintf(stderr,"please input fileName!\n");
@@ -13,9 +14,12 @@ int main(int argc,char** argv){
         exit(EXIT_FAILURE);
     }
     lines_t lines = readFile(f);
-    for(size_t i = 0 ;i<lines.len;i++){
-        replaceEachLine(&(lines.lines[i]),NULL);
-    }
+    catarray_t array;
+    array.n = 0;
+    array.arr = NULL;
+    saveAllCatToArray(lines,&array);
+    printWords(&array);
     freeLines(lines);
+    freeCatarray(array);
     fclose(f);
 }

@@ -53,8 +53,8 @@ int replaceBlank(char** line,int beginIndex,int endIndex, const char * content){
     return returnIndex;
 }
 
-//replace each lines' blanks with "cat"
-void replaceEachLine(char** line){
+//replace each lines' blanks with random "cat" from cats
+void replaceEachLine(char** line,catarray_t * cats){
     int index = 0;
     int beginBlank = -1;
     int endBlank = -1;
@@ -69,7 +69,7 @@ void replaceEachLine(char** line){
                 category = malloc((endBlank-beginBlank)*sizeof(char));
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
                 category[endBlank-beginBlank-1] = '\0';
-                const char* content = chooseWord(category,NULL);
+                const char* content = chooseWord(category,cats);
                 index = replaceBlank(line,beginBlank,endBlank,content);
                 beginBlank = -1;
                 endBlank = -1;
@@ -85,6 +85,75 @@ void replaceEachLine(char** line){
     printf("%s\n",*line);
 }
 
+//replace each lines' blanks with random "cat" from cats and backward reference
+void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* history){
+    int index = 0;
+    int beginBlank = -1;
+    int endBlank = -1;
+    char * category = NULL;
+    while((*line)[index]!='\0'){
+        if((*line)[index] == '_'){
+            if(beginBlank == -1 && endBlank == -1){
+                beginBlank = index;
+                index++;
+            }else if(endBlank == -1){
+                endBlank = index;
+                category = malloc((endBlank-beginBlank)*sizeof(char));
+                strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
+                category[endBlank-beginBlank-1] = '\0';
+                const char* content;
+                if(isInteger(category)){
+                    int backIndex = atoi(category);
+                    if(backIndex > history->n_words){
+                        fprintf(stderr,"reference out of boundary!");
+                        exit(EXIT_FAILURE);
+                    }
+                    content = getContentFromHistory(*history,backIndex);
+                }else{
+                    content = chooseWord(category,cats);
+                }
+                //save content to history
+                history->words = realloc(history->words,sizeof(char*)*(history->n_words+1));
+                history->words[history->n_words] = content;
+                history->n_words++;
+
+                index = replaceBlank(line,beginBlank,endBlank,content);
+                beginBlank = -1;
+                endBlank = -1;
+                free(category);
+            }
+        }else{
+            index++;
+        }
+    }
+    if(beginBlank != -1 && endBlank == -1){
+        fprintf(stderr,"%s does not has a pair of _",*line);
+    }
+    printf("%s\n",*line);
+}
+
+// According to the backIndex(start from 1), get history content
+const char* getContentFromHistory(history_t history,int backIndex){
+    int len = history.n_words;
+    return history.words[len-backIndex];
+}
+
+//judge if str is a backward reference
+bool isInteger(char * str){
+    int index = 0;
+    int hasNoZero = false;
+    while(str[index]!='\0'){
+        if(str[index]>'9' || str[index]<'0'){
+            return false;
+        }
+        if(str[index]<='9' && str[index]>='1'){
+            hasNoZero = true;
+        }
+        index++;
+    }
+    return hasNoZero;
+}
+
 //remove '\n' from a line
 void removeNewLine(char * line){
     int index = 0;
@@ -94,5 +163,66 @@ void removeNewLine(char * line){
             return;
         }
         index++;
+    }
+}
+
+// get category from name
+category_t * getCategoryByName(char * name,catarray_t array){
+    if(array.n == 0) return NULL;
+    for(int i =0 ;i<array.n;i++){
+        if(strcmp(array.arr[i].name,name)==0){
+            
+            return &(array.arr[i]);
+        }
+    }
+    return NULL;
+}
+
+// free catarray_t array
+void freeCatarray(catarray_t array){
+    for(size_t i = 0;i<array.n;i++){
+        free(array.arr[i].words);
+    }
+    free(array.arr);
+}
+
+// save category content to according category in array
+void saveCatToArray(catarray_t* array,char * catName,char * catContent){
+    //don't have catName before
+    int n = array->n;
+     //find category according to categoryName, add catContent
+    category_t * catGroup = getCategoryByName(catName,*array);
+    if(catGroup == NULL){
+        (*array).arr = realloc((*array).arr,(n+1)*sizeof(category_t));
+        (*array).arr[n].name = catName;
+        (*array).arr[n].n_words = 1;
+        (*array).arr[n].words = malloc(sizeof(char*)*1);
+        (*array).arr[n].words[0] = catContent;
+        (*array).n++;
+        n++;
+    }else{//has catName before
+        int len = (*catGroup).n_words;
+        (*catGroup).words = realloc((*catGroup).words,sizeof(char*)*(len+1));
+        (*catGroup).words[len] = catContent;
+        (*catGroup).n_words++;
+    }
+}
+
+// save all category content to according category in array
+void saveAllCatToArray(lines_t lines,catarray_t* array){
+    char * catName;
+    char * catContent;
+    char* pre;
+    for(size_t i = 0 ;i<lines.len;i++){
+        //get CatName
+        pre = lines.lines[i];
+        catName = strsep(&(lines.lines[i]),":");
+        catContent = strsep(&(lines.lines[i]),":");
+        if(lines.lines[i]!=NULL){
+            fprintf(stderr,"format Error!");
+            exit(EXIT_FAILURE);
+        }
+        lines.lines[i] = pre;
+        saveCatToArray(array,catName,catContent);
     }
 }
