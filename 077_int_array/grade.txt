@@ -1,11 +1,12 @@
-Grading at 10/24/2024:20:12:28.940709
-For commit ID 01bd479e6fbfe97db6ad300f699469a94e5abfab
-Grading at Thu Oct 24 04:12:22 PM EDT 2024
+Grading at 10/24/2024:20:20:55.494835
+For commit ID 5abbe0522cdd5d20ccd3273f3dbdf028dbd0398a
+Grading at Thu Oct 24 04:20:49 PM EDT 2024
 Attempting to compile:
 rm -f *.o  *~ intArrayTest
 #################################################
 testcase1:
-Your output is incorrect
+Your output is correct
+valgrind was clean
 #################################################
 testcase2:
 Your output is correct
@@ -19,4 +20,4 @@ testcase4:
 Your output is correct
 valgrind was clean
 
-Overall Grade: C
+Overall Grade: A
