@@ -95,6 +95,7 @@ bool IntArray::operator!=(const IntArray & rhs) const {
 
 std::ostream & operator<<(std::ostream & s, const IntArray & rhs) {
     if(rhs.size() == 0){
+        s<<"{}";
         return s;
     }
     s<<"{";
