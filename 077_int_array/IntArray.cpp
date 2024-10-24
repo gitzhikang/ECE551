@@ -5,16 +5,27 @@
 IntArray::IntArray():data(NULL),numElements(0){
 
 }
-IntArray::IntArray(int n):data((int *) malloc(n*sizeof(*data))),numElements(n){
-
+IntArray::IntArray(int n){
+    if(n == 0){
+        this->data=NULL;
+        this->numElements=0;
+    }else{
+        this->data = (int *) malloc(n*sizeof(*data));
+        this->numElements=n;
+    }
 }
 
 IntArray::IntArray(const IntArray & rhs)  {
     this->numElements = rhs.numElements;
-    this->data = (int *) malloc(this->numElements*sizeof(*data));
-    for(int i =0;i<rhs.numElements;i++){
-        this->data[i] = rhs.data[i];
+    if(rhs.size() == 0){
+        this->data = NULL;
+    }else{
+        this->data = (int *) malloc(this->numElements*sizeof(*data));
+        for(int i =0;i<rhs.numElements;i++){
+            this->data[i] = rhs.data[i];
+        }
     }
+    
 }
 IntArray::~IntArray() {
     free(this->data);
@@ -24,11 +35,17 @@ IntArray & IntArray::operator=(const IntArray & rhs) {
     if(&rhs == this){
         return *this;
     }
-    this->numElements = rhs.numElements;
-    free(this->data);
-    this->data = (int *) malloc(this->numElements*sizeof(*data));
-    for(int i =0;i<rhs.numElements;i++){
-        this->data[i] = rhs.data[i];
+    if(rhs.size()==0){
+        this->numElements=0;
+        free(this->data);
+        this->data = NULL;
+    }else{
+        this->numElements = rhs.numElements;
+        free(this->data);
+        this->data = (int *) malloc(this->numElements*sizeof(*data));
+        for(int i =0;i<rhs.numElements;i++){
+            this->data[i] = rhs.data[i];
+        }
     }
     return *this;
 }
@@ -49,6 +66,9 @@ bool IntArray::operator==(const IntArray & rhs) const {
     if(this->numElements!=rhs.numElements){
         return false;
     }
+    if(this->numElements==0&&rhs.numElements==0){
+        return true;
+    }
     for(int i =0;i<rhs.numElements;i++){
         if(this->data[i] != rhs.data[i]){
             return false;
@@ -61,6 +81,9 @@ bool IntArray::operator!=(const IntArray & rhs) const {
 
     if(this->numElements!=rhs.numElements){
         return true;
+    }
+    if(this->numElements==0&&rhs.numElements==0){
+        return false;
     }
     for(int i =0;i<rhs.numElements;i++){
         if(this->data[i] != rhs.data[i]){
