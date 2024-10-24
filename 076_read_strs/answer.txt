@@ -8,4 +8,4 @@ ans = el
 ans = elp
 ans = elpp
 ans = elppA
-f(Aplle) = elppA
+f(Apple) = elppA
