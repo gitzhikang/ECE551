@@ -21,6 +21,9 @@ IntArray::~IntArray() {
 }
 
 IntArray & IntArray::operator=(const IntArray & rhs) {
+    if(&rhs == this){
+        return *this;
+    }
     this->numElements = rhs.numElements;
     free(this->data);
     this->data = (int *) malloc(this->numElements*sizeof(*data));
