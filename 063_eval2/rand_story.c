@@ -132,6 +132,76 @@ void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* histor
     printf("%s\n",*line);
 }
 
+//replace each lines' blanks with random "cat" from cats and backward reference
+void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t* history){
+    int index = 0;
+    int beginBlank = -1;
+    int endBlank = -1;
+    char * category = NULL;
+    while((*line)[index]!='\0'){
+        if((*line)[index] == '_'){
+            if(beginBlank == -1 && endBlank == -1){
+                beginBlank = index;
+                index++;
+            }else if(endBlank == -1){
+                endBlank = index;
+                category = malloc((endBlank-beginBlank)*sizeof(char));
+                strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
+                category[endBlank-beginBlank-1] = '\0';
+                const char* content;
+                if(isInteger(category)){
+                    int backIndex = atoi(category);
+                    if(backIndex > history->n_words){
+                        fprintf(stderr,"reference out of boundary!");
+                        exit(EXIT_FAILURE);
+                    }
+                    content = getContentFromHistory(*history,backIndex);
+                }else{
+                    content = chooseWord(category,cats);   
+                    removeContent(content,category,cats);
+                }
+                //save content to history
+                history->words = realloc(history->words,sizeof(char*)*(history->n_words+1));
+                history->words[history->n_words] = content;
+                history->n_words++;
+
+                index = replaceBlank(line,beginBlank,endBlank,content);
+                beginBlank = -1;
+                endBlank = -1;
+                free(category);
+            }
+        }else{
+            index++;
+        }
+    }
+    if(beginBlank != -1 && endBlank == -1){
+        fprintf(stderr,"%s does not has a pair of _",*line);
+    }
+    printf("%s\n",*line);
+}
+
+void removeContent(const char * content,char * category,catarray_t* cats){
+
+    for(int i = 0;i<cats->n;i++){
+        if(strcmp(cats->arr[i].name,category) == 0){
+            for(int j = 0;j<cats->arr[i].n_words;j++){
+                if(strcmp(cats->arr[i].words[j],content)==0){
+                    int index = j+1;
+                    while(index < cats->arr[i].n_words){
+                        cats->arr[i].words[index-1] =  cats->arr[i].words[index];
+                        index++;
+                    }
+                    cats->arr[i].n_words--;
+                    return;
+                }
+            }
+        }
+    }
+
+}
+
+
+
 // According to the backIndex(start from 1), get history content
 const char* getContentFromHistory(history_t history,int backIndex){
     int len = history.n_words;

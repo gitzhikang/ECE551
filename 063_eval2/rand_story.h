@@ -61,3 +61,8 @@ const char* getContentFromHistory(history_t history,int backIndex);
 //judge if str is a backward reference
 bool isInteger(char * str);
 
+//replace each lines' blanks with random "cat" from cats and backward reference
+void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t* history);
+
+void removeContent(const char * content,char * category,catarray_t* cats);
+
