@@ -287,7 +287,7 @@ void saveAllCatToArray(lines_t lines,catarray_t* array){
         //get CatName
         pre = lines.lines[i];
         catName = strsep(&(lines.lines[i]),":");
-        catContent = strsep(&(lines.lines[i]),":");
+        catContent = lines.lines[i];
         
         lines.lines[i] = pre;
         saveCatToArray(array,catName,catContent);
