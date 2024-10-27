@@ -288,10 +288,7 @@ void saveAllCatToArray(lines_t lines,catarray_t* array){
         pre = lines.lines[i];
         catName = strsep(&(lines.lines[i]),":");
         catContent = strsep(&(lines.lines[i]),":");
-        if(lines.lines[i]!=NULL){
-            fprintf(stderr,"format Error!");
-            exit(EXIT_FAILURE);
-        }
+        
         lines.lines[i] = pre;
         saveCatToArray(array,catName,catContent);
     }
