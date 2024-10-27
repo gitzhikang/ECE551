@@ -1,6 +1,6 @@
-Grading at 10/27/2024:21:16:53.161246
-For commit ID cc8853007b6d588ef35393fbacb898fb985ed5b9
-Grading at Sun Oct 27 05:16:41 PM EDT 2024
+Grading at 10/27/2024:21:21:07.187101
+For commit ID 04f949e19510b892a260b1731e8a3ed240bbae84
+Grading at Sun Oct 27 05:20:53 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -143,9 +143,33 @@ Now running YOUR tests for step 4
 Your output looks good. Lets check valgrind
 Valgrind was clean
 
-4.2: Current test is story-step4 -n words.txt story2.txt
+4.2: Current test is story-step4 words.txt story2-error1-s4.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.3: Current test is story-step4 -n words.txt story2.txt
 -----------------------------
 Your output looks good. Lets check valgrind
+Valgrind was clean
+
+4.4: Current test is story-step4 words.txt -n story2.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.5: Current test is story-step4 words.txt  story2.txt -n
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+4.6: Current test is story-step4 words.txt  story2.txt -n words-error1.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
 Valgrind was clean
 
 You have passed the test cases YOU provided
