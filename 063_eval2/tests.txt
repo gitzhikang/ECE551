@@ -15,4 +15,8 @@ story-step3 words.txt story2-error1.txt
 story-step3 words.txt story2-error2.txt
 story-step3 story2-error1.txt words.txt
 story-step4 words.txt story2.txt
+story-step4 words.txt story2-error1-s4.txt
 story-step4 -n words.txt story2.txt
+story-step4 words.txt -n story2.txt
+story-step4 words.txt  story2.txt -n
+story-step4 words.txt  story2.txt -n words-error1.txt
