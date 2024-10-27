@@ -287,6 +287,10 @@ void saveAllCatToArray(lines_t lines,catarray_t* array){
         //get CatName
         pre = lines.lines[i];
         catName = strsep(&(lines.lines[i]),":");
+        if(lines.lines[i] == NULL){
+            fprintf(stderr,"No : find!");
+            exit(EXIT_FAILURE);
+        }
         catContent = lines.lines[i];
         
         lines.lines[i] = pre;
