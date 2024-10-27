@@ -1,6 +1,6 @@
-Grading at 10/27/2024:20:57:10.121877
-For commit ID 56360e656044c9018cbb86b8576475415db3f4c8
-Grading at Sun Oct 27 04:57:00 PM EDT 2024
+Grading at 10/27/2024:21:00:40.510658
+For commit ID a5513d632068b9d2244605e1237a16af08cf0ebe
+Grading at Sun Oct 27 05:00:30 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -74,6 +74,17 @@ Valgrind was clean
 2.4: Current test is story-step2 words-error3.txt
 -----------------------------
 Your output looks good. Lets check valgrind
+Valgrind was clean
+
+2.5: Current test is story-step2 words-error4.txt
+-----------------------------
+You considered this a failure case:
+format Error!But we did not.
+
+2.6: Current test is story-step2 words-error5.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
 Valgrind was clean
 
 Step 3
