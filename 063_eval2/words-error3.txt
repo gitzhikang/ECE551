@@ -1,0 +1,6 @@
+animal:dragon
+animal:cave sneak
+place:cave
+adjective:peculiar
+adjective:scary
+adjective:peaceful
