@@ -17,6 +17,7 @@ struct lines_tag
 
 typedef struct lines_tag lines_t;
 
+//struct for choose history
 struct history_tag
 {
     const char ** words;
@@ -25,14 +26,13 @@ struct history_tag
 
 typedef struct history_tag history_t;
 
-//read lines from file
+//seperate file according to the line, read each line into lines
 lines_t readFile(FILE* f);
 
 //free memory in lines
 void freeLines(lines_t lines);
 
-//replace each lines' blanks with "cat"
-void replaceEachLine(char** line,catarray_t * cats);
+
 
 //replace blank with content
 int replaceBlank(char** line,int beginIndex,int endIndex, const char * content);
@@ -46,14 +46,23 @@ category_t * getCategoryByName(char * name,catarray_t array);
 // free catarray_t array
 void freeCatarray(catarray_t array);
 
-// save category content to according category in array
+// save one category content to corresponding category in array
 void saveCatToArray(catarray_t* array,char * catName,char * catContent);
 
-// save all category content to according category in array
+// save all category content from lines to corresponding category in array
 void saveAllCatToArray(lines_t lines,catarray_t* array);
 
 //replace each lines' blanks with random "cat" from cats and backward reference
+// if cats == null, replace blank with cat
 void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* history);
+
+//replace each lines' blanks with random "cat" from cats and allow backward reference and no repeat
+// if cats == null, replace blank with cat
+void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t* history);
+
+//replace each lines' blanks with "cat"
+// if cats == null, replace blank with cat
+void replaceEachLine(char** line,catarray_t * cats);
 
 // According to the backIndex(start from 1), get history content
 const char* getContentFromHistory(history_t history,int backIndex);
@@ -61,8 +70,6 @@ const char* getContentFromHistory(history_t history,int backIndex);
 //judge if str is a backward reference
 bool isInteger(char * str);
 
-//replace each lines' blanks with random "cat" from cats and backward reference
-void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t* history);
-
+//remove the corresponding content of category from catarray_t
 void removeContent(const char * content,char * category,catarray_t* cats);
 

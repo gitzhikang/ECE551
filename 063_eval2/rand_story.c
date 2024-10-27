@@ -1,6 +1,8 @@
 #include "rand_story.h"
 #include "string.h"
 #include <stdio.h>
+
+//seperate file according to the line, read each line into lines
 lines_t readFile(FILE* f){
     char ** lines = NULL;
     char * curr = NULL;
@@ -21,6 +23,7 @@ lines_t readFile(FILE* f){
     return ans;
 }
 
+//free memory in lines
 void freeLines(lines_t lines){
     for(size_t i = 0;i<lines.len;i++){
         free(lines.lines[i]);
@@ -54,6 +57,7 @@ int replaceBlank(char** line,int beginIndex,int endIndex, const char * content){
 }
 
 //replace each lines' blanks with random "cat" from cats
+// if cats == null, replace blank with cat
 void replaceEachLine(char** line,catarray_t * cats){
     int index = 0;
     int beginBlank = -1;
@@ -85,7 +89,8 @@ void replaceEachLine(char** line,catarray_t * cats){
     printf("%s\n",*line);
 }
 
-//replace each lines' blanks with random "cat" from cats and backward reference
+//replace each lines' blanks with random "cat" from cats and allow backward reference
+// if cats == null, replace blank with cat
 void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* history){
     int index = 0;
     int beginBlank = -1;
@@ -102,6 +107,7 @@ void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* histor
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
                 category[endBlank-beginBlank-1] = '\0';
                 const char* content;
+                //judge the whether use backward reference
                 if(isInteger(category)){
                     int backIndex = atoi(category);
                     if(backIndex > history->n_words){
@@ -132,7 +138,8 @@ void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* histor
     printf("%s\n",*line);
 }
 
-//replace each lines' blanks with random "cat" from cats and backward reference
+//replace each lines' blanks with random "cat" from cats and allow backward reference and no repeat
+// if cats == null, replace blank with cat
 void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t* history){
     int index = 0;
     int beginBlank = -1;
@@ -149,6 +156,7 @@ void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
                 category[endBlank-beginBlank-1] = '\0';
                 const char* content;
+                //judge the whether use backward reference
                 if(isInteger(category)){
                     int backIndex = atoi(category);
                     if(backIndex > history->n_words){
@@ -157,6 +165,7 @@ void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t
                     }
                     content = getContentFromHistory(*history,backIndex);
                 }else{
+                    //if choose from cats, should remove the chosen content in cats
                     content = chooseWord(category,cats);   
                     removeContent(content,category,cats);
                 }
@@ -179,7 +188,7 @@ void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t
     }
     printf("%s\n",*line);
 }
-
+//remove the corresponding content of category from catarray_t
 void removeContent(const char * content,char * category,catarray_t* cats){
 
     for(int i = 0;i<cats->n;i++){
@@ -241,7 +250,6 @@ category_t * getCategoryByName(char * name,catarray_t array){
     if(array.n == 0) return NULL;
     for(int i =0 ;i<array.n;i++){
         if(strcmp(array.arr[i].name,name)==0){
-            
             return &(array.arr[i]);
         }
     }
@@ -256,7 +264,7 @@ void freeCatarray(catarray_t array){
     free(array.arr);
 }
 
-// save category content to according category in array
+// save one category content to corresponding category in array
 void saveCatToArray(catarray_t* array,char * catName,char * catContent){
     //don't have catName before
     int n = array->n;
@@ -278,7 +286,7 @@ void saveCatToArray(catarray_t* array,char * catName,char * catContent){
     }
 }
 
-// save all category content to according category in array
+// save all category content from lines to corresponding category in array
 void saveAllCatToArray(lines_t lines,catarray_t* array){
     char * catName;
     char * catContent;

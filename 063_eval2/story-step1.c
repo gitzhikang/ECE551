@@ -12,10 +12,13 @@ int main(int argc,char** argv){
         fprintf(stderr,"file doesn't exist!\n");
         exit(EXIT_FAILURE);
     }
+    //read file to lines
     lines_t lines = readFile(f);
+    //replace each block in each line
     for(size_t i = 0 ;i<lines.len;i++){
         replaceEachLine(&(lines.lines[i]),NULL);
     }
+    //free memory
     freeLines(lines);
     fclose(f);
 }

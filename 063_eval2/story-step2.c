@@ -13,12 +13,16 @@ int main(int argc,char** argv){
         fprintf(stderr,"file doesn't exist!\n");
         exit(EXIT_FAILURE);
     }
+    //read to lines
     lines_t lines = readFile(f);
+    //initial ans
     catarray_t array;
     array.n = 0;
     array.arr = NULL;
+    //save cat to ans
     saveAllCatToArray(lines,&array);
     printWords(&array);
+    //free memory
     freeLines(lines);
     freeCatarray(array);
     fclose(f);

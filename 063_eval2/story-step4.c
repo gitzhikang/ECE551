@@ -42,19 +42,20 @@ int main(int argc,char** argv){
     array.arr = NULL;
     saveAllCatToArray(linesCat,&array);
     
-
+    //replace blank according to the array
     lines_t linesStory = readFile(fStory);
     history_t* history = malloc(sizeof(*history));
     history->n_words = 0;
     history->words=NULL;
     for(size_t i = 0 ;i<linesStory.len;i++){
+        //judge if we allow used
         if(skipUsed){
             replaceEachLineWithBackWardNoRepeat(&(linesStory.lines[i]),&array,history);
         }else{
             replaceEachLineWithBackWard(&(linesStory.lines[i]),&array,history);
         }
-        
     }
+    //free memory
     freeLines(linesCat);
     freeCatarray(array);
     fclose(fCat);
