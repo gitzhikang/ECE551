@@ -1,6 +1,6 @@
-Grading at 10/27/2024:21:00:40.510658
-For commit ID a5513d632068b9d2244605e1237a16af08cf0ebe
-Grading at Sun Oct 27 05:00:30 PM EDT 2024
+Grading at 10/27/2024:21:11:40.753629
+For commit ID bcaf48a345f85a33967db66486c60c1e4f2bb1b7
+Grading at Sun Oct 27 05:11:30 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -78,8 +78,20 @@ Valgrind was clean
 
 2.5: Current test is story-step2 words-error4.txt
 -----------------------------
-You considered this a failure case:
-format Error!But we did not.
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+animal:								animal:
+  dragon							  dragon
+  walrus							  walrus
+place:								place:
+  cave							      |	  cave:122
+adjective:							adjective:
+  peculiar							  peculiar
+  scary								  scary
+  peaceful							  peaceful
+Your file did not match the expected output
+
 
 2.6: Current test is story-step2 words-error5.txt
 -----------------------------
