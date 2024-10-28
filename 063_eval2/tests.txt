@@ -9,6 +9,8 @@ story-step2 words-error2.txt
 story-step2 words-error3.txt
 story-step2 words-error4.txt
 story-step2 words-error5.txt
+story-step2 words-error5.txt
+story-step2 words-error6.txt
 story-step3 words.txt story2.txt
 story-step3 words.txt story-error3.txt
 story-step3 words.txt story2-error1.txt
