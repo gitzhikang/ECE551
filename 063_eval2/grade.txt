@@ -1,6 +1,6 @@
-Grading at 10/27/2024:21:36:50.936732
-For commit ID ece7bc536687b6cdd77b5c1c8958ce4bd04b35a4
-Grading at Sun Oct 27 05:36:37 PM EDT 2024
+Grading at 10/28/2024:18:48:38.199936
+For commit ID 723682698d1ece7bf5d74c3357d31ca7f0bf547f
+Grading at Mon Oct 28 02:48:23 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -82,6 +82,18 @@ Your output looks good. Lets check valgrind
 Valgrind was clean
 
 2.6: Current test is story-step2 words-error5.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+2.7: Current test is story-step2 words-error5.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
+Valgrind was clean
+
+2.8: Current test is story-step2 words-error6.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
