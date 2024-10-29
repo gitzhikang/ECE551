@@ -1,6 +1,6 @@
-Grading at 10/28/2024:19:22:15.099723
-For commit ID 81821172c6cf59ebbd6d49c6263e0d757aa01f3f
-Grading at Mon Oct 28 03:21:59 PM EDT 2024
+Grading at 10/29/2024:14:06:06.891111
+For commit ID a4ac6ea0591cc1e85f10d40707793bb4cc66750d
+Grading at Tue Oct 29 10:05:51 AM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -44,6 +44,16 @@ Valgrind was clean
 Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
+
+1.6: Current test is story-step1 story-error5.txt
+-----------------------------
+We considered this a failure case.
+But you did not (exit status was EXIT_SUCCESS).
+
+1.7: Current test is story-step1 story-error6.txt
+-----------------------------
+We considered this a failure case.
+But you did not (exit status was EXIT_SUCCESS).
 
 Step 2
 Checking that story-step2 compiles
@@ -189,8 +199,8 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-You have passed the test cases YOU provided
-If your tests are good, this is great. 
-If your tests are insufficient, you should do much more testing
+You have NOT passed your test cases!
+You should go and figure out/understand where thing went wrong
+And fix the problem(s) before the deadline
 
 Overall Grade: NO GRADE YET
