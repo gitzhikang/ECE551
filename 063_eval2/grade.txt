@@ -1,6 +1,6 @@
-Grading at 10/29/2024:14:12:20.935603
-For commit ID f082ee159de85cb7a41a0078ada0959a8b7b6247
-Grading at Tue Oct 29 10:12:04 AM EDT 2024
+Grading at 10/29/2024:22:44:58.770808
+For commit ID 9253960ed4e3698df79f1f89ffc45a350b661b64
+Grading at Tue Oct 29 06:44:38 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -55,6 +55,21 @@ Valgrind was clean
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
+Valgrind was clean
+
+1.8: Current test is story-step1 story2.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+Valgrind was clean
+
+1.9: Current test is story-step1 story2-error1.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+Valgrind was clean
+
+1.10: Current test is story-step1 story2-error2.txt
+-----------------------------
+Your output looks good. Lets check valgrind
 Valgrind was clean
 
 Step 2
@@ -114,6 +129,27 @@ Valgrind was clean
 2.9: Current test is story-step2 words-error7.txt
 -----------------------------
 Your output looks good. Lets check valgrind
+Valgrind was clean
+
+2.10: Current test is story-step2 words-error8.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+Valgrind was clean
+
+2.11: Current test is story-step2 words-error9.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+Valgrind was clean
+
+2.12: Current test is story-step2 words-error10.txt
+-----------------------------
+Your output looks good. Lets check valgrind
+Valgrind was clean
+
+2.13: Current test is story-step2 words-error11.txt
+-----------------------------
+Great: we both considered this an error
+Lets check if it valgrinds:
 Valgrind was clean
 
 Step 3
