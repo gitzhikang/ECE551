@@ -5,6 +5,9 @@ story-step1 story-error3.txt
 story-step1 story-error4.txt
 story-step1 story-error5.txt
 story-step1 story-error6.txt
+story-step1 story2.txt
+story-step1 story2-error1.txt
+story-step1 story2-error2.txt
 story-step2 words.txt
 story-step2 words-error1.txt
 story-step2 words-error2.txt
@@ -14,6 +17,10 @@ story-step2 words-error5.txt
 story-step2 words-error5.txt
 story-step2 words-error6.txt
 story-step2 words-error7.txt
+story-step2 words-error8.txt
+story-step2 words-error9.txt
+story-step2 words-error10.txt
+story-step2 words-error11.txt
 story-step3 words.txt story2.txt
 story-step3 words.txt story-error3.txt
 story-step3 words.txt story2-error1.txt
