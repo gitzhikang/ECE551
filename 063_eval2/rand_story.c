@@ -69,6 +69,10 @@ void replaceEachLine(char** line,catarray_t * cats){
                 beginBlank = index;
                 index++;
             }else if(endBlank == -1){
+                if(endBlank - beginBlank == 1){
+                    fprintf(stderr,"No content betweern _");
+                    exit(EXIT_FAILURE);
+                }
                 endBlank = index;
                 category = malloc((endBlank-beginBlank)*sizeof(char));
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
@@ -102,6 +106,10 @@ void replaceEachLineWithBackWard(char** line,catarray_t * cats,history_t* histor
                 beginBlank = index;
                 index++;
             }else if(endBlank == -1){
+                if(endBlank - beginBlank == 1){
+                    fprintf(stderr,"No content betweern _");
+                    exit(EXIT_FAILURE);
+                }
                 endBlank = index;
                 category = malloc((endBlank-beginBlank)*sizeof(char));
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
@@ -151,6 +159,10 @@ void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t
                 beginBlank = index;
                 index++;
             }else if(endBlank == -1){
+                if(endBlank - beginBlank == 1){
+                    fprintf(stderr,"No content betweern _");
+                    exit(EXIT_FAILURE);
+                }
                 endBlank = index;
                 category = malloc((endBlank-beginBlank)*sizeof(char));
                 strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
