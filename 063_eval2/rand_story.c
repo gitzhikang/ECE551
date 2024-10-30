@@ -56,7 +56,7 @@ int replaceBlank(char** line,int beginIndex,int endIndex, const char * content){
     return returnIndex;
 }
 
-//replace each lines' blanks with random "cat" from cats and allow backward reference and no repeat
+//replace each lines' blanks with random cat from cats and allow backward reference and no repeat, then print new line
 // if cats == null, replace blank with cat
 void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,history_t* history,bool backward,bool noRepeat){
     int index = 0;
@@ -65,10 +65,10 @@ void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,his
     char * category = NULL;
     while((*line)[index]!='\0'){
         if((*line)[index] == '_'){
-            if(beginBlank == -1 && endBlank == -1){
+            if(beginBlank == -1 && endBlank == -1){// meet first _
                 beginBlank = index;
                 index++;
-            }else if(endBlank == -1){
+            }else if(endBlank == -1){// found a pair _
                 if(index - beginBlank == 1){
                     fprintf(stderr,"No content betweern _");
                     exit(EXIT_FAILURE);
@@ -99,6 +99,7 @@ void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,his
                     history->words[history->n_words] = content;
                     history->n_words++;
                 }else{
+                    //not backword, just random chose cat
                     content = chooseWord(category,cats);
                 }
                 

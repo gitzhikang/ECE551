@@ -15,7 +15,7 @@ int main(int argc,char** argv){
     }
     //read to lines
     lines_t lines = readFile(f);
-    //initial ans
+    //initiate ans
     catarray_t array;
     array.n = 0;
     array.arr = NULL;
