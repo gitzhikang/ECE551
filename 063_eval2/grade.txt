@@ -1,6 +1,6 @@
-Grading at 10/29/2024:22:44:58.770808
-For commit ID 9253960ed4e3698df79f1f89ffc45a350b661b64
-Grading at Tue Oct 29 06:44:38 PM EDT 2024
+Grading at 10/30/2024:01:01:11.701899
+For commit ID 44dcb7f25a25c248068b7bac08e093ee25191623
+Grading at Tue Oct 29 09:00:53 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -13,13 +13,20 @@ rm story-step1.o
 The code compiled (good)
 Executable story-step1 exists (good)
 Checking with provided test case story.txt
-Your file matched the expected output
+Your file did not match the expected output
 Now running YOUR tests for step 1
 
 1.1: Current test is story-step1 story.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-Valgrind was clean
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+Once upon a time, there was a cat who lived in a very cat	Once upon a time, there was a cat who lived in a very cat
+Once upon a time, there was a cat who lived in a very cat     <
+cat. 							      <
+cat. 								cat. 
+Your file did not match the expected output
+
 
 1.2: Current test is story-step1 story-error1.txt
 -----------------------------
@@ -59,18 +66,39 @@ Valgrind was clean
 
 1.8: Current test is story-step1 story2.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-Valgrind was clean
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+Once upon a time, there was a cat. This cat lived in a very	Once upon a time, there was a cat. This cat lived in a very
+Once upon a time, there was a cat. This cat lived in a very   <
+cat cat. One day, it left its cat cat and met a cat.	      <
+cat cat. One day, it left its cat cat and met a cat.		cat cat. One day, it left its cat cat and met a cat.
+Your file did not match the expected output
+
 
 1.9: Current test is story-step1 story2-error1.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-Valgrind was clean
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+Once upon a time, there was a cat. This cat lived in a very	Once upon a time, there was a cat. This cat lived in a very
+Once upon a time, there was a cat. This cat lived in a very   <
+cat cat. One day, it left its cat cat and met a cat.	      <
+cat cat. One day, it left its cat cat and met a cat.		cat cat. One day, it left its cat cat and met a cat.
+Your file did not match the expected output
+
 
 1.10: Current test is story-step1 story2-error2.txt
 -----------------------------
-Your output looks good. Lets check valgrind
-Valgrind was clean
+It looks like you got different output from us on that case.
+Here is the diff (yours on left, ours on right):
+
+Once upon a time, there was a cat. This cat lived in a very	Once upon a time, there was a cat. This cat lived in a very
+Once upon a time, there was a cat. This cat lived in a very   <
+cat cat. One day, it left its cat cat and met a cat.	      <
+cat cat. One day, it left its cat cat and met a cat.		cat cat. One day, it left its cat cat and met a cat.
+Your file did not match the expected output
+
 
 Step 2
 Checking that story-step2 compiles
@@ -237,8 +265,8 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-You have passed the test cases YOU provided
-If your tests are good, this is great. 
-If your tests are insufficient, you should do much more testing
+You have NOT passed your test cases!
+You should go and figure out/understand where thing went wrong
+And fix the problem(s) before the deadline
 
 Overall Grade: NO GRADE YET
