@@ -242,7 +242,7 @@ void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,his
                     history->words[history->n_words] = content;
                     history->n_words++;
                 }else{
-                    chooseWord(category,cats);
+                    content = chooseWord(category,cats);
                 }
                 
                 index = replaceBlank(line,beginBlank,endBlank,content);
