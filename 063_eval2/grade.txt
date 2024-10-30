@@ -1,6 +1,6 @@
-Grading at 10/30/2024:01:05:40.015563
-For commit ID 93e4877212cea781677f951e480233620a7b8911
-Grading at Tue Oct 29 09:05:21 PM EDT 2024
+Grading at 10/30/2024:01:08:44.777412
+For commit ID 42d23c7232267df8c5768b09e9fb20cd44d9ccba
+Grading at Tue Oct 29 09:08:24 PM EDT 2024
 Doing some basic checking for your submission
 
 Step 1
@@ -13,20 +13,13 @@ rm story-step1.o
 The code compiled (good)
 Executable story-step1 exists (good)
 Checking with provided test case story.txt
-Line_1_did_not_match
-Line_2_did_not_match
-Your file did not match the expected output
+Your file matched the expected output
 Now running YOUR tests for step 1
 
 1.1: Current test is story-step1 story.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Once upon a time, there was a  who lived in a very 	      |	Once upon a time, there was a cat who lived in a very cat
-. 							      |	cat. 
-Your file did not match the expected output
-
+Your output looks good. Lets check valgrind
+Valgrind was clean
 
 1.2: Current test is story-step1 story-error1.txt
 -----------------------------
@@ -56,109 +49,28 @@ Valgrind was clean
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
-Valgrind reported errors:
-==121793== Memcheck, a memory error detector
-==121793== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==121793== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==121793== Command: ./story-step1 story-error5.txt
-==121793== Parent PID: 121792
-==121793== 
-==121793== Use of uninitialised value of size 8
-==121793==    at 0x484ED76: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==121793==    by 0x10962B: replaceBlank (rand_story.c:37)
-==121793==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121793==    by 0x109472: main (story-step1.c:19)
-==121793== 
-==121793== Use of uninitialised value of size 8
-==121793==    at 0x484ED84: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==121793==    by 0x10962B: replaceBlank (rand_story.c:37)
-==121793==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121793==    by 0x109472: main (story-step1.c:19)
-==121793== 
-==121793== Use of uninitialised value of size 8
-==121793==    at 0x1096C2: replaceBlank (rand_story.c:47)
-==121793==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121793==    by 0x109472: main (story-step1.c:19)
-==121793== 
-==121793== 
-==121793== HEAP SUMMARY:
-==121793==     in use at exit: 650 bytes in 4 blocks
-==121793==   total heap usage: 10 allocs, 6 frees, 9,118 bytes allocated
-==121793== 
-==121793== For a detailed leak analysis, rerun with: --leak-check=full
-==121793== 
-==121793== Use --track-origins=yes to see where uninitialised values come from
-==121793== For lists of detected and suppressed errors, rerun with: -s
-==121793== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+Valgrind was clean
 
 1.7: Current test is story-step1 story-error6.txt
 -----------------------------
 Great: we both considered this an error
 Lets check if it valgrinds:
-Valgrind reported errors:
-==121839== Memcheck, a memory error detector
-==121839== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==121839== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==121839== Command: ./story-step1 story-error6.txt
-==121839== Parent PID: 121830
-==121839== 
-==121839== Use of uninitialised value of size 8
-==121839==    at 0x484ED76: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==121839==    by 0x10962B: replaceBlank (rand_story.c:37)
-==121839==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121839==    by 0x109472: main (story-step1.c:19)
-==121839== 
-==121839== Use of uninitialised value of size 8
-==121839==    at 0x484ED84: __strlen_sse2 (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==121839==    by 0x10962B: replaceBlank (rand_story.c:37)
-==121839==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121839==    by 0x109472: main (story-step1.c:19)
-==121839== 
-==121839== Use of uninitialised value of size 8
-==121839==    at 0x1096C2: replaceBlank (rand_story.c:47)
-==121839==    by 0x10A0A6: replaceEachLineWithBackWardNoRepeatForAll (rand_story.c:248)
-==121839==    by 0x109472: main (story-step1.c:19)
-==121839== 
-==121839== 
-==121839== HEAP SUMMARY:
-==121839==     in use at exit: 661 bytes in 4 blocks
-==121839==   total heap usage: 9 allocs, 5 frees, 5,033 bytes allocated
-==121839== 
-==121839== For a detailed leak analysis, rerun with: --leak-check=full
-==121839== 
-==121839== Use --track-origins=yes to see where uninitialised values come from
-==121839== For lists of detected and suppressed errors, rerun with: -s
-==121839== ERROR SUMMARY: 3 errors from 3 contexts (suppressed: 0 from 0)
+Valgrind was clean
 
 1.8: Current test is story-step1 story2.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Once upon a time, there was a . This  lived in a very	      |	Once upon a time, there was a cat. This cat lived in a very
- . One day, it left its   and met a .			      |	cat cat. One day, it left its cat cat and met a cat.
-Your file did not match the expected output
-
+Your output looks good. Lets check valgrind
+Valgrind was clean
 
 1.9: Current test is story-step1 story2-error1.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Once upon a time, there was a . This  lived in a very	      |	Once upon a time, there was a cat. This cat lived in a very
- . One day, it left its   and met a .			      |	cat cat. One day, it left its cat cat and met a cat.
-Your file did not match the expected output
-
+Your output looks good. Lets check valgrind
+Valgrind was clean
 
 1.10: Current test is story-step1 story2-error2.txt
 -----------------------------
-It looks like you got different output from us on that case.
-Here is the diff (yours on left, ours on right):
-
-Once upon a time, there was a . This  lived in a very	      |	Once upon a time, there was a cat. This cat lived in a very
- . One day, it left its   and met a .			      |	cat cat. One day, it left its cat cat and met a cat.
-Your file did not match the expected output
-
+Your output looks good. Lets check valgrind
+Valgrind was clean
 
 Step 2
 Checking that story-step2 compiles
@@ -325,8 +237,8 @@ Great: we both considered this an error
 Lets check if it valgrinds:
 Valgrind was clean
 
-You have NOT passed your test cases!
-You should go and figure out/understand where thing went wrong
-And fix the problem(s) before the deadline
+You have passed the test cases YOU provided
+If your tests are good, this is great. 
+If your tests are insufficient, you should do much more testing
 
 Overall Grade: NO GRADE YET
