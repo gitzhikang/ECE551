@@ -17,6 +17,7 @@ int main(int argc,char** argv){
     //replace each block in each line
     for(size_t i = 0 ;i<lines.len;i++){
         replaceEachLine(&(lines.lines[i]),NULL);
+        replaceEachLineWithBackWardNoRepeatForAll(&(lines.lines[i]),NULL,NULL,false,false);
     }
     //free memory
     freeLines(lines);

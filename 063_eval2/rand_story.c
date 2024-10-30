@@ -200,6 +200,66 @@ void replaceEachLineWithBackWardNoRepeat(char** line,catarray_t * cats,history_t
     }
     printf("%s\n",*line);
 }
+
+void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,history_t* history,bool backward,bool noRepeat){
+    int index = 0;
+    int beginBlank = -1;
+    int endBlank = -1;
+    char * category = NULL;
+    while((*line)[index]!='\0'){
+        if((*line)[index] == '_'){
+            if(beginBlank == -1 && endBlank == -1){
+                beginBlank = index;
+                index++;
+            }else if(endBlank == -1){
+                if(index - beginBlank == 1){
+                    fprintf(stderr,"No content betweern _");
+                    exit(EXIT_FAILURE);
+                }
+                endBlank = index;
+                category = malloc((endBlank-beginBlank)*sizeof(char));
+                strncpy(category,*line+beginBlank+1,endBlank-beginBlank-1);
+                category[endBlank-beginBlank-1] = '\0';
+                const char* content;
+                //judge the whether use backward reference
+                if(backward){
+                    if(isInteger(category)){
+                        int backIndex = atoi(category);
+                        if(backIndex > history->n_words){
+                            fprintf(stderr,"reference out of boundary!");
+                            exit(EXIT_FAILURE);
+                    }
+                    content = getContentFromHistory(*history,backIndex);
+                    }else{
+                        content = chooseWord(category,cats); 
+                         //if no repeat, and choose from cats, should remove the chosen content in cats
+                        if(noRepeat){
+                            removeContent(content,category,cats);
+                        }
+                    }
+                    //save content to history
+                    history->words = realloc(history->words,sizeof(char*)*(history->n_words+1));
+                    history->words[history->n_words] = content;
+                    history->n_words++;
+                }else{
+                    chooseWord(category,cats);
+                }
+                
+                index = replaceBlank(line,beginBlank,endBlank,content);
+                beginBlank = -1;
+                endBlank = -1;
+                free(category);
+            }
+        }else{
+            index++;
+        }
+    }
+    if(beginBlank != -1 && endBlank == -1){
+        fprintf(stderr,"%s does not has a pair of _",*line);
+    }
+    printf("%s\n",*line);
+}
+
 //remove the corresponding content of category from catarray_t
 void removeContent(const char * content,char * category,catarray_t* cats){
 

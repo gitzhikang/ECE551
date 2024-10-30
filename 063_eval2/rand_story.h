@@ -73,3 +73,5 @@ bool isInteger(char * str);
 //remove the corresponding content of category from catarray_t
 void removeContent(const char * content,char * category,catarray_t* cats);
 
+void replaceEachLineWithBackWardNoRepeatForAll(char** line,catarray_t * cats,history_t* history,bool backward,bool noRepeat);
+
