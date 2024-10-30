@@ -33,6 +33,7 @@ int main(int argc,char** argv){
     history->words=NULL;
     for(size_t i = 0 ;i<linesStory.len;i++){
         replaceEachLineWithBackWard(&(linesStory.lines[i]),&array,history);
+        replaceEachLineWithBackWardNoRepeatForAll(&(linesStory.lines[i]),&array,history,true,false);
     }
     //free memory
     freeLines(linesCat);
