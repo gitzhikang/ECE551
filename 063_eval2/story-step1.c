@@ -16,7 +16,6 @@ int main(int argc,char** argv){
     lines_t lines = readFile(f);
     //replace each block in each line
     for(size_t i = 0 ;i<lines.len;i++){
-        replaceEachLine(&(lines.lines[i]),NULL);
         replaceEachLineWithBackWardNoRepeatForAll(&(lines.lines[i]),NULL,NULL,false,false);
     }
     //free memory
