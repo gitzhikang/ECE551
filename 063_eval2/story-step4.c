@@ -49,11 +49,8 @@ int main(int argc,char** argv){
     history->words=NULL;
     for(size_t i = 0 ;i<linesStory.len;i++){
         //judge if we allow used
-        if(skipUsed){
-            replaceEachLineWithBackWardNoRepeat(&(linesStory.lines[i]),&array,history);
-        }else{
-            replaceEachLineWithBackWard(&(linesStory.lines[i]),&array,history);
-        }
+         replaceEachLineWithBackWardNoRepeatForAll(&(linesStory.lines[i]),&array,history,true,skipUsed);
+
     }
     //free memory
     freeLines(linesCat);
